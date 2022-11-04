@@ -9,7 +9,7 @@ LIBFT		=	$(LIBFT_DIR)/libft.a
 MLX_DIR		=	minilibx
 MLX			=	$(MLX_DIR)/libmlx.a
 
-LIBRARY		=	-L $(LIBFT_DIR) -L $(MLX_DIR)
+LIB_DIR		=	-L $(LIBFT_DIR) -L $(MLX_DIR) -L/usr/X11R6/lib
 INCLUDE_DIR	=	include
 INCLUDES	=	-I $(INCLUDE_DIR)
 SRCDIRS		=	$(shell find $(SRC_DIR) -type d)
@@ -21,11 +21,34 @@ CFLAGS		=	-Wall -Wextra -Werror
 
 SRCS		=	$(SRC_DIR)/test.c
 OBJS		=	$(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+DEPS		=	$(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.d)
+.PHONY: $(DEPS)
+
+# LINUX | OSX | ARM
+UNAME_S := $(shell uname -s)
+UNAME_P := $(shell uname -p)
+
+# Linux
+ifeq ($(UNAME_S),Linux)
+	LIBRARY = -lmlx -lXext -lX11
+endif
+
+# macos x86
+ifeq ($(UNAME_S),Darwin)
+	LIBRARY = -lmlx
+	FRAMEWORK = -framework OpenGL -framework AppKit
+endif
+
+# macos ARM (m1/m2...)
+ifneq ($(filter arm%, $(UNAME_P)),)
+	LIBRARY = -lmlx
+	FRAMEWORK = -framework OpenGL -framework AppKit
+endif
 
 all:			$(NAME)
 
 $(NAME):		$(MLX) $(LIBFT) $(OBJS)
-				$(CC) $(OBJS) $(CFLAGS) $(LIBRARY) -o $(NAME)
+				$(CC) $(OBJS) $(CFLAGS) $(LIB_DIR) $(LIBRARY) $(FRAMEWORK) -o $(NAME)
 
 $(MLX):
 				$(MAKE) -C $(MLX_DIR)
