@@ -40,6 +40,7 @@ $(OBJ_DIR)/%.o:	$(SRC_DIR)/%.c
 clean:
 				$(RM) -rf $(OBJS) $(OBJ_DIR)
 				$(MAKE) -C $(LIBFT_DIR) clean
+				$(MAKE) -C $(MLX_DIR) clean
 
 fclean:			clean
 				$(RM) -f $(NAME)
