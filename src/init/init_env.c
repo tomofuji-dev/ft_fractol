@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_window.c                                      :+:      :+:    :+:   */
+/*   init_env.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 10:46:32 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/07 11:43:36 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/11/07 11:49:53 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	init_env(t_env *env)
 									WINDOW_HEIGHT, WINDOW_TITLE);
 	if (env->win_ptr == NULL)
 	{
-		free(env->mlx_ptr);
+		mlx_destroy_display(env->mlx_ptr);
 		perror("failed to create new window");
 		exit(1);
 	}
