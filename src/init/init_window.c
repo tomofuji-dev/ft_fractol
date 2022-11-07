@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 10:46:32 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/07 11:18:23 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/11/07 11:43:36 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void	init_window(t_window *window)
+void	init_env(t_env *env)
 {
-	window->mlx_ptr = mlx_init();
-	if (window->mlx_ptr == NULL)
+	env->mlx_ptr = mlx_init();
+	if (env->mlx_ptr == NULL)
 	{
 		perror("failed to init mlx");
 		exit(1);
 	}
-	window->win_ptr = mlx_new_window(window->mlx_ptr, WINDOW_WIDTH, \
+	env->win_ptr = mlx_new_window(env->mlx_ptr, WINDOW_WIDTH, \
 									WINDOW_HEIGHT, WINDOW_TITLE);
-	if (window->win_ptr == NULL)
+	if (env->win_ptr == NULL)
 	{
-		free(window->mlx_ptr);
+		free(env->mlx_ptr);
 		perror("failed to create new window");
 		exit(1);
 	}

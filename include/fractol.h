@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:28:41 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/07 11:04:22 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/11/07 11:41:44 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,20 @@
 # define WINDOW_HEIGHT 430
 # define WINDOW_TITLE "fractol"
 
-typedef struct s_window {
-	void	*mlx_ptr;
-	void	*win_ptr;
-	int		width;
-	int		height;
-	char	*data;
-	int		bits_per_pixel;
-	int		bytes_per_pixel;
-	int		bytes_per_line;
-	int		endian;
-}	t_window;
+typedef enum e_fractal {
+	MANDELBROT,
+	JULIA
+}	t_fractal;
+
+typedef struct s_env {
+	t_fractal	fractal;
+	void		*mlx_ptr;
+	void		*win_ptr;
+	char		*data;
+	int			bits_per_pixel;
+	int			bytes_per_pixel;
+	int			bytes_per_line;
+	int			endian;
+}	t_env;
 
 #endif
