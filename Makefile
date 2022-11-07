@@ -21,7 +21,10 @@ RM			=	rm
 CFLAGS		=	-Wall -Wextra -Werror
 
 SRCS		=	$(SRC_DIR)/test.c \
-				$(SRC_DIR)/hook/handle_key.c
+				$(SRC_DIR)/hook/setup_hook.c \
+				$(SRC_DIR)/hook/handle_key.c \
+				$(SRC_DIR)/hook/handle_loop.c \
+				$(SRC_DIR)/init/init_window.c
 OBJS		=	$(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 DEPS		=	$(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.d)
 .PHONY: $(DEPS)

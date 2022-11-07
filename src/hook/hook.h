@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:33:08 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/07 09:34:56 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/11/07 11:23:07 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include "fractol.h"
 
-int	handle_key(int keysym, t_data *data);
+void	setup_hook(t_window *window);
+
+int		handle_key(int keysym, t_window *window);
+int		handle_loop(t_window *window);
 
 #endif

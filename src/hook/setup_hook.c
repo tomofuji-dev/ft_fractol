@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   setup_hook.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 09:28:41 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/07 11:04:22 by tfujiwar         ###   ########.fr       */
+/*   Created: 2022/11/07 10:35:53 by tfujiwar          #+#    #+#             */
+/*   Updated: 2022/11/07 11:17:22 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRACTOL_H
-# define FRACTOL_H
+#include "hook.h"
+#include <mlx.h>
+#include <X11/X.h>
 
-# include <stddef.h>
-# include <stdbool.h>
-# include <stdint.h>
-
-# define WINDOW_WIDTH 800
-# define WINDOW_HEIGHT 430
-# define WINDOW_TITLE "fractol"
-
-typedef struct s_window {
-	void	*mlx_ptr;
-	void	*win_ptr;
-	int		width;
-	int		height;
-	char	*data;
-	int		bits_per_pixel;
-	int		bytes_per_pixel;
-	int		bytes_per_line;
-	int		endian;
-}	t_window;
-
-#endif
+void	setup_hook(t_window *window)
+{
+	mlx_loop_hook(window->mlx_ptr, &handle_loop, window);
+	mlx_hook(window->win_ptr, KeyPress, KeyPressMask, &handle_key, window);
+	mlx_loop(window->mlx_ptr);
+}

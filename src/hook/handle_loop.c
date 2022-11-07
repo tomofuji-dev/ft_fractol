@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   handle_loop.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 09:28:41 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/07 11:04:22 by tfujiwar         ###   ########.fr       */
+/*   Created: 2022/11/07 10:31:08 by tfujiwar          #+#    #+#             */
+/*   Updated: 2022/11/07 11:28:58 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRACTOL_H
-# define FRACTOL_H
+#include "hook.h"
+#include <mlx.h>
 
-# include <stddef.h>
-# include <stdbool.h>
-# include <stdint.h>
+#define RED_PIXEL 0xFF0000
 
-# define WINDOW_WIDTH 800
-# define WINDOW_HEIGHT 430
-# define WINDOW_TITLE "fractol"
-
-typedef struct s_window {
-	void	*mlx_ptr;
-	void	*win_ptr;
-	int		width;
-	int		height;
-	char	*data;
-	int		bits_per_pixel;
-	int		bytes_per_pixel;
-	int		bytes_per_line;
-	int		endian;
-}	t_window;
-
-#endif
+int	handle_loop(t_window *window)
+{
+	mlx_pixel_put(window->mlx_ptr, window->win_ptr, \
+					WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2, RED_PIXEL);
+	return (0);
+}
