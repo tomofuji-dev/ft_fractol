@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: t.fuji <t.fuji@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:28:41 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/08 11:16:34 by t.fuji           ###   ########.fr       */
+/*   Updated: 2022/11/08 14:31:38 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdint.h>
 
 # define WINDOW_WIDTH 800
-# define WINDOW_HEIGHT 430
+# define WINDOW_HEIGHT 400
 # define WINDOW_TITLE "fractol"
 
 typedef enum e_fractal {
