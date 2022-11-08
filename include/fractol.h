@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:28:41 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/08 14:31:38 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/11/08 14:48:33 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ typedef struct s_env {
 	t_arg	*arg;
 	void	*mlx_ptr;
 	void	*win_ptr;
-	char	*data;
+	void	*img_ptr;
+	char	*img_data;
 	int		bits_per_pixel;
 	int		bytes_per_pixel;
 	int		bytes_per_line;

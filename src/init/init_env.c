@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 10:46:32 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/07 11:49:53 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/11/08 16:26:05 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,15 @@ void	init_env(t_env *env)
 		perror("failed to create new window");
 		exit(1);
 	}
+	env->img_ptr = mlx_new_image(env->mlx_ptr, WINDOW_WIDTH, WINDOW_HEIGHT);
+	if (env->img_ptr == NULL)
+	{
+		mlx_destroy_window(env->win_ptr);
+		mlx_destroy_display(env->mlx_ptr);
+		perror("failed to create new window");
+		exit(1);
+	}
+	env->img_data = mlx_get_data_addr(env->img_ptr, &env->bits_per_pixel, \
+										&env->bytes_per_line, &env->endian);
+	env->bytes_per_pixel = env->bits_per_pixel / 8;
 }
