@@ -6,7 +6,7 @@
 /*   By: t.fuji <t.fuji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:28:41 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/08 09:52:40 by t.fuji           ###   ########.fr       */
+/*   Updated: 2022/11/08 11:16:34 by t.fuji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,15 @@
 # define WINDOW_TITLE "fractol"
 
 typedef enum e_fractal {
-	MANDELBROT,
 	JULIA,
+	MANDELBROT,
 }	t_fractal;
 
 typedef struct s_arg {
 	t_fractal	fractal;
-}	t_arg
+	int			julia_param_a;
+	int			julia_param_b;
+}	t_arg;
 
 typedef struct s_env {
 	t_arg	*arg;

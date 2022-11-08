@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: t.fuji <t.fuji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/04 11:07:56 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/08 11:22:18 by t.fuji           ###   ########.fr       */
+/*   Created: 2022/11/08 11:14:04 by t.fuji            #+#    #+#             */
+/*   Updated: 2022/11/08 11:14:48 by t.fuji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "hook.h"
-#include "init.h"
-
-int	main(int argc, char *argv[])
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	t_arg	arg;
-	t_env	env;
-
-	arg = arg_parse(argc, argv);
-	init_env(&env);
-	env.arg = &arg;
-	setup_hook(&env);
+	while (*s1 || *s2)
+	{
+		if (*s1 != *s2)
+			return ((unsigned char)*s1 - (unsigned char)*s2);
+		s1++;
+		s2++;
+	}
+	return (0);
 }

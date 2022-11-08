@@ -10,9 +10,9 @@ MLX_DIR		=	minilibx
 MLX			=	$(MLX_DIR)/libmlx.a
 
 LIB_DIR		=	-L $(LIBFT_DIR) -L $(MLX_DIR) -L /usr/X11/lib
-LIBRARY		=	-lmlx -lXext -lX11 -lm
+LIBRARY		=	-lmlx -lXext -lX11 -lm -lft
 INCLUDE_DIR	=	include
-INCLUDES	=	-I $(INCLUDE_DIR) -I $(MLX_DIR) -I $(LIBFT_DIR) -I /usr/X11/include
+INCLUDES	=	-I $(INCLUDE_DIR) -I $(MLX_DIR) -I /usr/X11/include
 SRCDIRS		=	$(shell find $(SRC_DIR) -type d)
 INCLUDES 	+=	$(addprefix -I,$(SRCDIRS))
 
@@ -24,7 +24,8 @@ SRCS		=	$(SRC_DIR)/test.c \
 				$(SRC_DIR)/hook/setup_hook.c \
 				$(SRC_DIR)/hook/handle_key.c \
 				$(SRC_DIR)/hook/handle_loop.c \
-				$(SRC_DIR)/init/init_env.c
+				$(SRC_DIR)/init/init_env.c \
+				$(SRC_DIR)/init/arg_parse.c
 OBJS		=	$(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 DEPS		=	$(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.d)
 .PHONY: $(DEPS)

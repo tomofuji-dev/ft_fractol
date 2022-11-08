@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: t.fuji <t.fuji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/04 11:07:56 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/08 11:22:18 by t.fuji           ###   ########.fr       */
+/*   Created: 2022/11/08 11:23:44 by t.fuji            #+#    #+#             */
+/*   Updated: 2022/11/08 11:25:47 by t.fuji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "hook.h"
-#include "init.h"
+#ifndef LIBFT_H
+# define LIBFT_H
 
-int	main(int argc, char *argv[])
-{
-	t_arg	arg;
-	t_env	env;
+# include <stddef.h>
 
-	arg = arg_parse(argc, argv);
-	init_env(&env);
-	env.arg = &arg;
-	setup_hook(&env);
-}
+int		ft_isdigit(int c);
+int		ft_isspace(int c);
+void	*ft_memset(void *s, int c, size_t n);
+void	ft_putendl_fd(char *s, int fd);
+int		ft_strcmp(const char *s1, const char *s2);
+
+#endif

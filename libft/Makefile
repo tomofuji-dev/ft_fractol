@@ -5,6 +5,7 @@ SRCS =	ft_strlen.c \
 		ft_strrchr.c \
 		ft_strnstr.c \
 		ft_strncmp.c \
+		ft_strcmp.c \
 		ft_memset.c \
 		ft_bzero.c \
 		ft_memcpy.c \
