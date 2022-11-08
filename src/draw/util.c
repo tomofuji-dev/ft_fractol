@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   setup_hook.c                                       :+:      :+:    :+:   */
+/*   util.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 10:35:53 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/08 20:19:26 by tfujiwar         ###   ########.fr       */
+/*   Created: 2022/11/08 19:59:15 by tfujiwar          #+#    #+#             */
+/*   Updated: 2022/11/08 20:16:16 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "hook.h"
-#include <mlx.h>
-#include <X11/X.h>
+#include "util.h"
 
-void	setup_hook(t_env *env)
+void	pixel_put(t_env *env, int x, int y, int color)
 {
-	mlx_loop_hook(env->mlx_ptr, &handle_loop, env);
-	mlx_hook(env->win_ptr, KeyPress, KeyPressMask, &handle_key, env);
-	mlx_loop(env->mlx_ptr);
+	char	*dst;
+
+	dst = env->img_data + (y * env->bytes_per_line + x * env->bytes_per_pixel);
+	*(int *)dst = color;
 }

@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:28:41 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/08 14:48:33 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/11/08 20:55:32 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ typedef struct s_arg {
 }	t_arg;
 
 typedef struct s_env {
-	t_arg	*arg;
 	void	*mlx_ptr;
 	void	*win_ptr;
 	void	*img_ptr;
@@ -43,5 +42,16 @@ typedef struct s_env {
 	int		bytes_per_line;
 	int		endian;
 }	t_env;
+
+struct s_fractal {
+	t_fractal		fractal_type;
+
+	unsigned int	zoom_level;
+	t_dpoint		center;
+	unsigned int	max_loop;
+	int				speeds[400][400];
+
+	unsigned int	julia_degree;
+};
 
 #endif

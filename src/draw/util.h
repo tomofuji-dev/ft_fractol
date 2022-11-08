@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   setup_hook.c                                       :+:      :+:    :+:   */
+/*   util.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 10:35:53 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/08 20:19:26 by tfujiwar         ###   ########.fr       */
+/*   Created: 2022/11/07 09:33:08 by tfujiwar          #+#    #+#             */
+/*   Updated: 2022/11/08 20:00:42 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "hook.h"
-#include <mlx.h>
-#include <X11/X.h>
+#ifndef UTIL_H
+# define UTIL_H
 
-void	setup_hook(t_env *env)
-{
-	mlx_loop_hook(env->mlx_ptr, &handle_loop, env);
-	mlx_hook(env->win_ptr, KeyPress, KeyPressMask, &handle_key, env);
-	mlx_loop(env->mlx_ptr);
-}
+# include "fractol.h"
+
+void	pixel_put(t_env *env, int x, int y, int color);
+
+#endif
