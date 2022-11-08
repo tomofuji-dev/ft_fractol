@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: t.fuji <t.fuji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:28:41 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/07 11:46:52 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/11/08 09:52:40 by t.fuji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,22 @@
 
 typedef enum e_fractal {
 	MANDELBROT,
-	JULIA
+	JULIA,
 }	t_fractal;
 
-typedef struct s_env {
+typedef struct s_arg {
 	t_fractal	fractal;
-	void		*mlx_ptr;
-	void		*win_ptr;
-	char		*data;
-	int			bits_per_pixel;
-	int			bytes_per_pixel;
-	int			bytes_per_line;
-	int			endian;
+}	t_arg
+
+typedef struct s_env {
+	t_arg	*arg;
+	void	*mlx_ptr;
+	void	*win_ptr;
+	char	*data;
+	int		bits_per_pixel;
+	int		bytes_per_pixel;
+	int		bytes_per_line;
+	int		endian;
 }	t_env;
 
 #endif
