@@ -6,7 +6,7 @@
 /*   By: t.fuji <t.fuji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:33:08 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/08 11:21:25 by t.fuji           ###   ########.fr       */
+/*   Updated: 2022/11/09 10:31:04 by t.fuji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef enum e_argerror
 	ARG_JULIA_PARAMS_ERROR
 }	t_argerror;
 
-void	init_env(t_env *env);
+void	init(t_env *env, t_fractal *f, t_arg arg);
 t_arg	arg_parse(int argc, char *argv[]);
 
 #endif

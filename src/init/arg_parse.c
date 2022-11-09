@@ -6,7 +6,7 @@
 /*   By: t.fuji <t.fuji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 09:53:31 by t.fuji            #+#    #+#             */
-/*   Updated: 2022/11/08 11:55:12 by t.fuji           ###   ########.fr       */
+/*   Updated: 2022/11/09 10:29:58 by t.fuji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,16 @@ t_arg	arg_parse(int argc, char *argv[])
 	ft_memset(&arg, 0, sizeof(t_arg));
 	if (ft_strcmp(argv[1], "julia") == 0)
 	{
-		arg.fractal = JULIA;
-		if (argc != 4)
+		arg.fractal_type = JULIA;
+		if (argc != 3)
 			arg_error(ARGC_JULIA_ERROR);
-		arg.julia_param_a = parse_int(argv[2]);
-		arg.julia_param_b = parse_int(argv[3]);
+		arg.julia_degree = parse_int(argv[2]);
 	}
 	else if (ft_strcmp(argv[1], "mandelbrot") == 0)
 	{
 		if (argc != 2)
 			arg_error(ARGC_MANDELBROT_ERROR);
-		arg.fractal = MANDELBROT;
+		arg.fractal_type = MANDELBROT;
 	}
 	else
 		arg_error(ARG_FRACTAL_TYPE_ERROR);
@@ -52,7 +51,7 @@ void	arg_error(t_argerror error_code)
 number of params should be 1(mandelbrot) or 3(julia).", 1);
 	else if (error_code == ARGC_JULIA_ERROR)
 		ft_putendl_fd("ARGC_ERROR:\t\
-number of params should be 3 in drawing julia.", 1);
+number of params should be 2 in drawing julia.", 1);
 	else if (error_code == ARGC_MANDELBROT_ERROR)
 		ft_putendl_fd("ARGC_ERROR:\t\
 number of params should be 1 in drawing mandelbrot.", 1);
@@ -63,7 +62,7 @@ fractal type should be \"julia\" or \"mandelbrot\".", 1);
 		ft_putendl_fd("ARG_JULIA_PARAMS_ERROR:\t\
 your julia params are not proper.", 1);
 	ft_putendl_fd("\n\tUsage:\t./fractol <fractol type> \
-<julia_param_a> <julia_param_b>", 1);
+<julia_degree>", 1);
 	exit(1);
 }
 
