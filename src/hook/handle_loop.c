@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 10:31:08 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/10 12:46:46 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/11/10 16:47:53 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 #include "draw.h"
 #include "util.h"
 #include <mlx.h>
-
-#define RED_PIXEL 0xFF0000
 
 int	handle_loop(t_env *env, t_fractal *f)
 {
