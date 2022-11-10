@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 10:46:32 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/10 12:25:38 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/11/10 18:00:50 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static void	init_fractal(t_fractal *f, t_arg arg)
 {
 	ft_memset(f, 0, sizeof(t_fractal));
 	f->type = arg.fractal_type;
-	f->zoom = 0;
+	f->zoom = 1;
 	f->max_loop = 100;
 	f->julia_c = julia_c(arg.julia_degree);
 }
