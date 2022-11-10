@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:28:41 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/10 12:52:11 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/11/10 18:41:36 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,17 +44,6 @@ typedef struct s_arg {
 	int				julia_degree;
 }	t_arg;
 
-typedef struct s_env {
-	void	*mlx_ptr;
-	void	*win_ptr;
-	void	*img_ptr;
-	char	*img_data;
-	int		bits_per_pixel;
-	int		bytes_per_pixel;
-	int		bytes_per_line;
-	int		endian;
-}	t_env;
-
 typedef struct s_fractal {
 	t_fractal_type	type;
 
@@ -64,5 +53,17 @@ typedef struct s_fractal {
 
 	t_complex		julia_c;
 }	t_fractal;
+
+typedef struct s_env {
+	void		*mlx_ptr;
+	void		*win_ptr;
+	void		*img_ptr;
+	char		*img_data;
+	int			bits_per_pixel;
+	int			bytes_per_pixel;
+	int			bytes_per_line;
+	int			endian;
+	t_fractal	*f;
+}	t_env;
 
 #endif

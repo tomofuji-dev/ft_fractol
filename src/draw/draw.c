@@ -6,22 +6,23 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 11:36:47 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/10 18:01:11 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/11/10 18:56:59 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "draw.h"
 #include "util.h"
+#include <stdio.h>
 
-void		draw(t_env *env, t_fractal *f);
+void		draw(t_env *env);
 static void	update_speed(t_fractal *f);
 static void	normalize_speed(t_fractal *f);
 static void	fractal_to_img(t_env *env, t_fractal *f);
 
-void	draw(t_env *env, t_fractal *f)
+void	draw(t_env *env)
 {
-	update_speed(f);
-	fractal_to_img(env, f);
+	update_speed(env->f);
+	fractal_to_img(env, env->f);
 }
 
 static void	update_speed(t_fractal *f)

@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 10:46:32 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/10 18:00:50 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/11/10 18:42:41 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	init(t_env *env, t_fractal *f, t_arg arg)
 {
 	init_env(env);
 	init_fractal(f, arg);
+	env->f = f;
 }
 
 static void	init_env(t_env *env)
@@ -44,17 +45,6 @@ static void	init_env(t_env *env)
 		perror("failed to create new window");
 		exit(1);
 	}
-	env->img_ptr = mlx_new_image(env->mlx_ptr, FRACTAL_WIDTH, FRACTAL_HEIGHT);
-	if (env->img_ptr == NULL)
-	{
-		mlx_destroy_window(env->mlx_ptr, env->win_ptr);
-		mlx_destroy_display(env->mlx_ptr);
-		perror("failed to create new window");
-		exit(1);
-	}
-	env->img_data = mlx_get_data_addr(env->img_ptr, &env->bits_per_pixel, \
-										&env->bytes_per_line, &env->endian);
-	env->bytes_per_pixel = env->bits_per_pixel / 8;
 }
 
 static void	init_fractal(t_fractal *f, t_arg arg)
