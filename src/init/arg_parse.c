@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arg_parse.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: t.fuji <t.fuji@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 09:53:31 by t.fuji            #+#    #+#             */
-/*   Updated: 2022/11/09 10:29:58 by t.fuji           ###   ########.fr       */
+/*   Updated: 2022/11/10 12:25:20 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <limits.h>
 #include <stdlib.h>
 
+t_arg		arg_parse(int argc, char *argv[]);
 void		arg_error(t_argerror error_code);
 static int	parse_int(const char *nptr);
 static int	process_digit(const char *nptr, long code);

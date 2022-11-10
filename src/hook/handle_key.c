@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:27:33 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/07 11:50:26 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/11/10 12:25:01 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <stdlib.h>
 #include "hook.h"
 
+int			handle_key(int keysym, t_env *env);
 static void	close_window(t_env *env);
 
 int	handle_key(int keysym, t_env *env)

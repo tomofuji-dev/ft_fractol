@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: t.fuji <t.fuji@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 10:46:32 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/09 10:36:00 by t.fuji           ###   ########.fr       */
+/*   Updated: 2022/11/10 12:25:38 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,12 @@
 #include <mlx.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
-static void	init_env(t_env *env);
-static void	init_fractal(t_fractal *f, t_arg arg);
+void				init(t_env *env, t_fractal *f, t_arg arg);
+static void			init_env(t_env *env);
+static void			init_fractal(t_fractal *f, t_arg arg);
+static t_complex	julia_c(int julia_degree);
 
 void	init(t_env *env, t_fractal *f, t_arg arg)
 {
@@ -58,8 +61,15 @@ static void	init_fractal(t_fractal *f, t_arg arg)
 {
 	ft_memset(f, 0, sizeof(t_fractal));
 	f->type = arg.fractal_type;
-	f->zoom_level = 0;
-	f->center = (t_coord){0, 0};
+	f->zoom = 0;
 	f->max_loop = 100;
-	f->julia_degree = arg.julia_degree;
+	f->julia_c = julia_c(arg.julia_degree);
+}
+
+static t_complex	julia_c(int julia_degree)
+{
+	return ((t_complex){
+		.r = JULIA_R * cos(M_PI * (double)julia_degree / 180),
+		.i = JULIA_R * sin(M_PI * (double)julia_degree / 180)
+	});
 }
