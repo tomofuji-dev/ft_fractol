@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 09:53:31 by t.fuji            #+#    #+#             */
-/*   Updated: 2022/11/10 12:25:20 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/11/12 15:35:35 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	arg_error(t_argerror error_code)
 {
 	if (error_code == ARGC_ERROR)
 		ft_putendl_fd("ARGC_ERROR:\t\
-number of params should be 1(mandelbrot) or 3(julia).", 1);
+number of params should be 1(mandelbrot) or 2(julia).", 1);
 	else if (error_code == ARGC_JULIA_ERROR)
 		ft_putendl_fd("ARGC_ERROR:\t\
 number of params should be 2 in drawing julia.", 1);
