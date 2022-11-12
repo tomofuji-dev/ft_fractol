@@ -18,7 +18,7 @@ INCLUDES 	+=	$(addprefix -I,$(SRCDIRS))
 
 CC			=	cc
 RM			=	rm
-CFLAGS		=	-Wall -Wextra -Werror -g
+CFLAGS		=	-Wall -Wextra -Werror
 
 SRCS		=	$(SRC_DIR)/main.c \
 				$(SRC_DIR)/hook/setup_hook.c \

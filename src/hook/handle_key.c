@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:27:33 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/12 13:26:05 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/11/12 17:14:22 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	handle_close_button(t_env *env)
 
 static void	close_window(t_env *env)
 {
+	mlx_destroy_image(env->mlx_ptr, env->img_ptr);
 	mlx_destroy_window(env->mlx_ptr, env->win_ptr);
 	mlx_destroy_display(env->mlx_ptr);
 	exit(0);
