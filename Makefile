@@ -20,9 +20,10 @@ CC			=	cc
 RM			=	rm
 CFLAGS		=	-Wall -Wextra -Werror -g
 
-SRCS		=	$(SRC_DIR)/test.c \
+SRCS		=	$(SRC_DIR)/main.c \
 				$(SRC_DIR)/hook/setup_hook.c \
 				$(SRC_DIR)/hook/handle_key.c \
+				$(SRC_DIR)/hook/handle_mouse.c \
 				$(SRC_DIR)/hook/handle_loop.c \
 				$(SRC_DIR)/init/init.c \
 				$(SRC_DIR)/init/arg_parse.c \

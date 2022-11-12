@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:28:41 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/12 12:59:11 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/11/12 14:51:51 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 # define FRACTAL_HEIGHT 1000
 # define WINDOW_TITLE "fractol"
 # define JULIA_R 0.7885
+# define MOUSE_WHEEL_UP 5
+# define MOUSE_WHEEL_DOWN 4
 
 typedef enum e_fractal_type {
 	JULIA,

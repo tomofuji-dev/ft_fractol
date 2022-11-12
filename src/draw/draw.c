@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 11:36:47 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/12 14:45:56 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/11/12 15:11:49 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,6 @@ static void	fractal_to_img(t_env *env, t_fractal *f)
 		while (x < WINDOW_WIDTH)
 		{
 			color = speed_to_mlxcode(f->speed[y][x]);
-			// color = encode_rgb((t_rgb){f->speed[y][x], \
-			// 		f->speed[y][x], f->speed[y][x]});
 			pixel_put(env, x, y, color);
 			x++;
 		}

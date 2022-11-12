@@ -1,25 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   setup_hook.c                                       :+:      :+:    :+:   */
+/*   handle_mouse.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 10:35:53 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/12 14:57:22 by tfujiwar         ###   ########.fr       */
+/*   Created: 2022/11/12 14:49:37 by tfujiwar          #+#    #+#             */
+/*   Updated: 2022/11/12 15:32:46 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "hook.h"
-#include <mlx.h>
-#include <X11/X.h>
+#include <X11/keysym.h>
+#include <stdio.h>
 
-void	setup_hook(t_env *env)
+int	handle_mouse(int button, int x, int y, t_env *e)
 {
-	mlx_loop_hook(env->mlx_ptr, &handle_loop, env);
-	mlx_hook(env->win_ptr, KeyPress, KeyPressMask, &handle_key, env);
-	mlx_hook(env->win_ptr, ClientMessage, StructureNotifyMask, \
-			&handle_close_button, env);
-	mlx_mouse_hook(env->win_ptr, &handle_mouse, env);
-	mlx_loop(env->mlx_ptr);
+	(void) x;
+	(void) y;
+
+	if (button == MOUSE_WHEEL_UP)
+	{
+		if (e->f->max_loop > 10)
+		{
+			e->f->zoom /= 0.9;
+			e->f->max_loop -= 2;
+		}
+	}
+	else if (button == MOUSE_WHEEL_DOWN)
+	{
+		if (e->f->zoom > 0.00001)
+		{
+			e->f->zoom *= 0.9;
+			e->f->max_loop += 2;
+		}
+	}
+	return (0);
 }
