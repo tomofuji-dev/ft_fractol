@@ -6,13 +6,13 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 11:36:47 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/12 13:03:43 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/11/12 14:45:56 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "draw.h"
 #include "util.h"
-#include <stdio.h>
+#include "color.h"
 
 void		draw(t_env *env);
 static void	update_speed(t_fractal *f);
@@ -60,7 +60,7 @@ static void	normalize_speed(t_fractal *f)
 		while (x < FRACTAL_WIDTH)
 		{
 			raw_speed = f->speed[y][x];
-			f->speed[y][x] = 255 - raw_speed / f->max_loop * 255;
+			f->speed[y][x] = raw_speed / f->max_loop * 255;
 			x++;
 		}
 		y++;
@@ -79,7 +79,9 @@ static void	fractal_to_img(t_env *env, t_fractal *f)
 		x = 0;
 		while (x < WINDOW_WIDTH)
 		{
-			color = encode_rgb(f->speed[y][x], f->speed[y][x], f->speed[y][x]);
+			color = speed_to_mlxcode(f->speed[y][x]);
+			// color = encode_rgb((t_rgb){f->speed[y][x], \
+			// 		f->speed[y][x], f->speed[y][x]});
 			pixel_put(env, x, y, color);
 			x++;
 		}

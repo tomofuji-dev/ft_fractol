@@ -26,6 +26,7 @@ SRCS		=	$(SRC_DIR)/test.c \
 				$(SRC_DIR)/hook/handle_loop.c \
 				$(SRC_DIR)/init/init.c \
 				$(SRC_DIR)/init/arg_parse.c \
+				$(SRC_DIR)/color/color.c \
 				$(SRC_DIR)/draw/draw.c \
 				$(SRC_DIR)/draw/speed.c \
 				$(SRC_DIR)/draw/util.c

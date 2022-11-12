@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   util.h                                             :+:      :+:    :+:   */
+/*   color.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 09:33:08 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/12 14:28:09 by tfujiwar         ###   ########.fr       */
+/*   Created: 2022/11/12 14:07:43 by tfujiwar          #+#    #+#             */
+/*   Updated: 2022/11/12 14:38:33 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTIL_H
-# define UTIL_H
+#ifndef COLOR_H
+# define COLOR_H
 
-# include "fractol.h"
-# include "color.h"
+#include <stdint.h>
 
-void		pixel_put(t_env *env, int x, int y, int color);
-t_complex	window_to_complex(int x, int y, double zoom);
+typedef struct s_rgb {
+	uint8_t	r;
+	uint8_t	g;
+	uint8_t	b;
+}	t_rgb;
+
+typedef struct s_hsv {
+	uint8_t	h;
+	uint8_t	s;
+	uint8_t	v;
+}	t_hsv;
+
+int	speed_to_mlxcode(uint8_t speed);
+int	encode_rgb(t_rgb code);
 
 #endif
