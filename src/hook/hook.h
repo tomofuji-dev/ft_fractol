@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:33:08 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/10 18:55:53 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/11/12 13:26:17 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 void	setup_hook(t_env *env);
 
 int		handle_key(int keysym, t_env *env);
+int		handle_close_button(t_env *env);
 int		handle_loop(t_env *env);
 
 #endif

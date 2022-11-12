@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:28:41 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/10 18:41:36 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/11/12 12:59:11 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 # include <stdbool.h>
 # include <stdint.h>
 
-# define WINDOW_WIDTH 400
-# define WINDOW_HEIGHT 400
-# define FRACTAL_WIDTH 400
-# define FRACTAL_HEIGHT 400
+# define WINDOW_WIDTH 1000
+# define WINDOW_HEIGHT 1000
+# define FRACTAL_WIDTH 1000
+# define FRACTAL_HEIGHT 1000
 # define WINDOW_TITLE "fractol"
 # define JULIA_R 0.7885
 

@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 10:35:53 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/10 18:55:20 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/11/12 13:26:55 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,7 @@ void	setup_hook(t_env *env)
 {
 	mlx_loop_hook(env->mlx_ptr, &handle_loop, env);
 	mlx_hook(env->win_ptr, KeyPress, KeyPressMask, &handle_key, env);
+	mlx_hook(env->win_ptr, ClientMessage, StructureNotifyMask, \
+			&handle_close_button, env);
 	mlx_loop(env->mlx_ptr);
 }
