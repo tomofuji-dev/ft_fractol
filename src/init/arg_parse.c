@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 09:53:31 by t.fuji            #+#    #+#             */
-/*   Updated: 2022/11/12 15:35:35 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/11/13 10:46:07 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ t_arg		arg_parse(int argc, char *argv[]);
 void		arg_error(t_argerror error_code);
 static int	parse_int(const char *nptr);
 static int	process_digit(const char *nptr, long code);
+static int	check_all_int(const char *nptr);
 
 t_arg	arg_parse(int argc, char *argv[])
 {
@@ -81,7 +82,7 @@ static int	parse_int(const char *nptr)
 	}
 	else if (*nptr == '+')
 		nptr++;
-	if (!ft_isdigit(*nptr))
+	if (!check_all_int(nptr))
 		arg_error(ARG_JULIA_PARAMS_ERROR);
 	return (process_digit(nptr, code));
 }
@@ -111,4 +112,11 @@ static int	process_digit(const char *nptr, long code)
 		}
 	}
 	return ((int) n);
+}
+
+static int	check_all_int(const char *nptr)
+{
+	while (*nptr && ft_isdigit(*nptr))
+		nptr++;
+	return (*nptr == '\0');
 }
