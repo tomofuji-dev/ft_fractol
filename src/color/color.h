@@ -6,14 +6,14 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 14:07:43 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/12 14:38:33 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/11/13 09:04:57 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef COLOR_H
 # define COLOR_H
 
-#include <stdint.h>
+# include <stdint.h>
 
 typedef struct s_rgb {
 	uint8_t	r;

@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 14:49:37 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/12 15:32:46 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/11/13 09:05:42 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	handle_mouse(int button, int x, int y, t_env *e)
 {
 	(void) x;
 	(void) y;
-
 	if (button == MOUSE_WHEEL_UP)
 	{
 		if (e->f->max_loop > 10)
