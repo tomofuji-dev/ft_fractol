@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 11:08:36 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/08 15:44:01 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/11/13 09:14:23 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	unsigned char	*p;
 
-	if (size != 0 && count > SIZE_MAX / size)
+	if (size != 0 && count > SSIZE_MAX / size)
 		return (NULL);
 	p = malloc(count * size);
 	if (!p)
