@@ -11,7 +11,6 @@ MLX			=	$(MLX_DIR)/libmlx.a
 
 LIB_DIR		=	-L $(LIBFT_DIR) -L $(MLX_DIR) -L /usr/X11/lib
 LIBRARY		=	-lmlx -lXext -lX11 -lm -lft
-INCLUDE_DIR	=	include
 INCLUDES	=	-I $(INCLUDE_DIR) -I $(MLX_DIR) -I /usr/X11/include
 SRCDIRS		=	$(shell find $(SRC_DIR) -type d)
 INCLUDES 	+=	$(addprefix -I,$(SRCDIRS))
